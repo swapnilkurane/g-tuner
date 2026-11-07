@@ -1,0 +1,18 @@
+{
+  "name": "Fieldtone Guitar Tuner",
+  "short_name": "Fieldtone",
+  "description": "A free, accurate guitar tuner that works anywhere, even offline.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#10120f",
+  "theme_color": "#10120f",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

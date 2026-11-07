@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#10120f">
+    <meta name="description" content="A free, accurate guitar tuner that works anywhere, even offline.">
+    <link rel="icon" href="icon.svg" type="image/svg+xml">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="stylesheet" href="styles.css">
+    <title>Fieldtone — Guitar Tuner</title>
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <a class="brand" href="./" aria-label="Fieldtone home">
+          <span class="brand-mark" aria-hidden="true">F</span>
+          <span>FIELDTONE</span>
+        </a>
+        <button class="icon-button" id="install-button" type="button" aria-label="Install tuner" hidden>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 17v3h14v-3"/></svg>
+        </button>
+      </header>
+
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow"><span class="live-dot" aria-hidden="true"></span> YOUR POCKET TUNER</p>
+        <h1 id="page-title">Find your <em>true</em> tone.</h1>
+        <p class="subtitle">A little quiet. A single string. You’re there.</p>
+      </section>
+
+      <section class="tuner-card" aria-label="Guitar tuner">
+        <div class="tuner-head">
+          <span class="tuning-label"><span class="tuning-dot"></span> STANDARD TUNING</span>
+          <span class="frequency" id="frequency">— <small>Hz</small></span>
+        </div>
+
+        <div class="meter" aria-hidden="true">
+          <div class="meter-ticks">
+            <span class="tick tick-major tick-left"></span>
+            <span class="tick"></span><span class="tick"></span>
+            <span class="tick tick-major"></span>
+            <span class="tick"></span><span class="tick"></span>
+            <span class="tick tick-center"></span>
+            <span class="tick"></span><span class="tick"></span>
+            <span class="tick tick-major"></span>
+            <span class="tick"></span><span class="tick"></span>
+            <span class="tick tick-major tick-right"></span>
+          </div>
+          <div class="meter-needle" id="needle"></div>
+          <div class="meter-scale"><span>FLAT</span><span>IN TUNE</span><span>SHARP</span></div>
+        </div>
+
+        <div class="note-readout" aria-live="polite" aria-atomic="true">
+          <span class="note-name" id="note">—</span>
+          <span class="octave" id="octave"></span>
+        </div>
+        <p class="status" id="status">Ready when you are</p>
+
+        <div class="mode-picker" role="group" aria-label="Tuning mode">
+          <span class="mode-label">TUNING MODE</span>
+          <div class="mode-options">
+            <button class="mode-option active" id="auto-mode" type="button" aria-pressed="true">Auto</button>
+            <button class="mode-option" id="manual-mode" type="button" aria-pressed="false">Manual</button>
+          </div>
+        </div>
+        <p class="mode-hint" id="mode-hint">Pluck any string — Fieldtone will find it</p>
+
+        <div class="string-picker" role="group" aria-label="Choose a guitar string">
+          <button class="string" type="button" data-index="0" aria-label="Low E, 82.4 hertz"><span class="string-note">E</span><span class="string-number">6</span></button>
+          <button class="string" type="button" data-index="1" aria-label="A, 110 hertz"><span class="string-note">A</span><span class="string-number">5</span></button>
+          <button class="string" type="button" data-index="2" aria-label="D, 146.8 hertz"><span class="string-note">D</span><span class="string-number">4</span></button>
+          <button class="string" type="button" data-index="3" aria-label="G, 196 hertz"><span class="string-note">G</span><span class="string-number">3</span></button>
+          <button class="string" type="button" data-index="4" aria-label="B, 246.9 hertz"><span class="string-note">B</span><span class="string-number">2</span></button>
+          <button class="string" type="button" data-index="5" aria-label="High E, 329.6 hertz"><span class="string-note">E</span><span class="string-number">1</span></button>
+        </div>
+        <div class="string-guide"><span>LOW E · 6</span><span id="string-guide-mode">AUTO-DETECT</span><span>HIGH E · 1</span></div>
+
+        <button class="start-button" id="start-button" type="button">
+          <svg class="mic-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3m-4 0h8"/></svg>
+          <span>Start tuning</span>
+          <span class="button-arrow" aria-hidden="true">↗</span>
+        </button>
+        <p class="permission-hint" id="permission-hint">Allow microphone access when asked</p>
+      </section>
+
+      <footer class="footer">
+        <span><span class="offline-icon" aria-hidden="true"></span> READY OFFLINE</span>
+        <span>MADE FOR THE MOMENT</span>
+      </footer>
+    </main>
+    <script src="app.js" defer></script>
+  </body>
+</html>
